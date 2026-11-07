@@ -1,0 +1,19 @@
+name: Replace index.html with rebuilt homepage
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace index.html with heatfund.html
+        run: cp heatfund.html index.html
+      - name: Commit and push if changed
+        run: |
+          git config user.name "stevesmithecogrants"
+          git config user.email "stevesmithecogrants@gmail.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Replace index.html with rebuilt HeatFund homepage"
+          git push
