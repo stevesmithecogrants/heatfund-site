@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="description" content="HeatFund — free eligibility check for UK heat pump, solar and insulation grants. £7,500 Boiler Upgrade Scheme, up to £9,000 for eligible off-gas-grid homes.">
+<link rel="canonical" href="https://www.heatfund.co.uk/">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="shortcut icon" href="/favicon.ico?v=2">
 <title>HeatFund — Heat pumps, solar &amp; grant checks</title>
@@ -401,6 +402,33 @@ footer li{margin:0}
 .cn-accept{background:var(--green);color:#fff}
 .cn-decline{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.heatfund.co.uk/#organization",
+      "name": "HeatFund",
+      "url": "https://www.heatfund.co.uk/",
+      "description": "HeatFund is an independent energy guide helping UK homeowners understand grants for heat pumps, solar panels, insulation and other home upgrades.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@heatfund.co.uk",
+        "contactType": "customer service"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.heatfund.co.uk/#website",
+      "url": "https://www.heatfund.co.uk/",
+      "name": "HeatFund",
+      "publisher": {"@id": "https://www.heatfund.co.uk/#organization"},
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -414,7 +442,6 @@ footer li{margin:0}
       <div class="nav-dropdown" id="grantsDropdown">
         <button class="nav-drop-toggle" id="grantsToggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="grantsPanel">Grants <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="dropdown-panel" id="grantsPanel" role="menu" aria-label="Grants">
-          <a href="/government-grants/" role="menuitem">Government Grants</a>
           <a href="/government-grants/" role="menuitem">UK Energy Grants 2026</a>
           <a href="/boiler-upgrade-scheme/" role="menuitem">Boiler Upgrade Scheme</a>
           <a href="/eco4-scheme/" role="menuitem">ECO4 Scheme</a>
@@ -444,7 +471,6 @@ footer li{margin:0}
     <a href="/eco4-scheme/">ECO4</a>
     <a href="/ev-charger-grants/">EV Chargers</a>
     <div class="mm-label">Grants</div>
-    <a class="mm-sub" href="/government-grants/">Government Grants</a>
     <a class="mm-sub" href="/government-grants/">UK Energy Grants 2026</a>
     <a class="mm-sub" href="/boiler-upgrade-scheme/">Boiler Upgrade Scheme</a>
     <a class="mm-sub" href="/eco4-scheme/">ECO4 Scheme</a>
@@ -467,7 +493,7 @@ footer li{margin:0}
     <div class="wrap hero-inner">
       <div class="hero-copy">
         <p class="eyebrow">Independent Energy Guide — Not Affiliated With UK Government</p>
-        <h1>Energy grants and upgrades that <span class="it">cut your bills</span></h1>
+        <h1>UK Energy Grants 2026: <span class="it">Heat Pump, Solar &amp; Insulation Funding</span></h1>
         <p class="hero-lead">Solar, heat pumps, insulation or a new boiler: see what's worth doing, what it really costs, and every grant that helps pay for it.</p>
         <form class="postcode-form" id="postcodeForm" action="/eligibility.html" method="get">
           <input type="text" id="postcodeInput" name="postcode" placeholder="Enter your postcode" aria-label="Enter your postcode" autocomplete="postal-code">
@@ -503,7 +529,7 @@ footer li{margin:0}
     <div class="wrap">
       <div class="goals-head">
         <div class="gh-left">
-          <h2>What do you<br>want to sort out?</h2>
+          <h2>Which energy grant<br><span class="it">could you get?</span></h2>
           <p>Pick a goal. We'll show you what usually works, what it costs, and any grant that helps pay for it.</p>
         </div>
         <a class="goals-link" href="#grants">Looking for a grant first? See every scheme that's open</a>
@@ -519,7 +545,7 @@ footer li{margin:0}
           <div class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></div>
           <h3>Go solar</h3>
           <p>Panels, a battery and export payments. What a system costs, and what it earns where you live.</p>
-          <a class="goal-foot" href="/solar-panels/">typically £3,000 <span class="arr">→</span></a>
+          <a class="goal-foot" href="/solar-panels/">See solar costs &amp; savings <span class="arr">→</span></a>
         </article>
         <article class="goal" id="service-heatpumps">
           <div class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
@@ -597,7 +623,7 @@ footer li{margin:0}
         <div class="gd-head">
           <div>
             <h2>Every grant<br><span class="it">you can still get</span></h2>
-            <p>Checked against GOV.UK, Ofgem and the Scottish and Welsh schemes. Updated September 2026.</p>
+            <p>Checked against GOV.UK, Ofgem and the Scottish and Welsh schemes. Updated November 2026.</p>
           </div>
           <a class="btn btn-green" href="/eligibility.html">Check what you qualify for →</a>
         </div>
@@ -660,6 +686,7 @@ footer li{margin:0}
             </tr>
           </tbody>
         </table>
+        <p style="font-size:.92rem;color:#C9CEDE;margin:18px 0 0">Sources: <a href="https://www.gov.uk/apply-boiler-upgrade-scheme" style="color:#8FE07A">Boiler Upgrade Scheme — GOV.UK</a> &middot; <a href="https://www.gov.uk/energy-company-obligation" style="color:#8FE07A">Energy Company Obligation — GOV.UK</a> &middot; <a href="https://www.ofgem.gov.uk/environmental-and-social-schemes/energy-company-obligation-eco" style="color:#8FE07A">Energy Company Obligation — Ofgem</a> &middot; <a href="https://www.gov.uk/find-energy-certificate" style="color:#8FE07A">Find an energy certificate — GOV.UK</a></p>
 
         <div class="timeline">
           <h3 class="tl-title">2026 to 2027 at a glance</h3>
@@ -681,7 +708,7 @@ footer li{margin:0}
   <section id="how" style="padding-top:8px">
     <div class="wrap">
       <div class="section-head">
-        <h2>Two minutes to know<br>where you stand</h2>
+        <h2>Check your eligibility<br><span class="it">in two minutes</span></h2>
       </div>
       <div class="steps2">
         <div class="step2"><div class="n">01</div><h3>Tell us about your home</h3><p>Your postcode, the type of property, how it's heated, and whether you'd pay yourself or need a grant.</p></div>
@@ -699,7 +726,7 @@ footer li{margin:0}
         <div class="whatis-left">
           <h2>What is<br>HeatFund?</h2>
           <p>An independent guide to upgrading your home: which upgrades are worth it, what they cost, and every grant that can help. We're not the government's Great British Energy (gbe.gov.uk), and we're not an energy supplier.</p>
-          <a class="card-link" href="#faq">More about us</a>
+          <a class="card-link" href="/about/">More about us</a>
           <div class="summary-box">
             <strong>UK energy grants available in 2026</strong> include the <a href="/boiler-upgrade-scheme/">Boiler Upgrade Scheme</a> (£7,500 towards a heat pump in England and Wales, or £9,000 for an air or ground source heat pump in oil- or LPG-heated homes with no mains gas until 31 March 2027), the <a href="/warm-homes-plan-2026/">Warm Homes: Local Grant</a>, <a href="/vat-relief/">0% VAT</a> until 31 March 2027, the <a href="#grants">Warm Home Discount</a> (£150 off electricity bills) and <a href="/eco4-scheme/">ECO4</a>, which closes on 31 December 2026. Scotland has Home Energy Scotland and Warmer Homes Scotland, and Wales has Nest.
           </div>
@@ -726,50 +753,26 @@ footer li{margin:0}
           <a href="/government-grants/">Government grants hub <span>→</span></a>
           <a href="/warm-homes-plan-2026/">Warm Homes: Local Grant <span>→</span></a>
           <a href="/boiler-upgrade-scheme/">Boiler Upgrade Scheme <span>→</span></a>
-          <a href="/boiler-upgrade-scheme/">Heat pump grants <span>→</span></a>
-          <a href="/eco4-scheme/">What replaces ECO4 <span>→</span></a>
           <a href="/eco4-scheme/">ECO4 scheme <span>→</span></a>
-          <a href="/eco4-scheme/">Who qualifies for ECO4 <span>→</span></a>
-          <a href="/eco4-scheme/">LA Flex <span>→</span></a>
           <a href="/free-insulation-grants/">Insulation grants <span>→</span></a>
           <a href="/solar-panels/">Solar panel grants <span>→</span></a>
           <a href="/vat-relief/">VAT relief <span>→</span></a>
-          <a href="/government-grants/">Every grant compared <span>→</span></a>
         </div>
         <div class="guide-col">
           <h3>Upgrades and costs</h3>
-          <a href="/solar-panels/">Solar panels <span>→</span></a>
           <a href="/solar-panels/">Solar panel costs <span>→</span></a>
-          <a href="/solar-panels/">Are solar panels worth it? <span>→</span></a>
           <a href="/battery-storage/">Battery storage <span>→</span></a>
-          <a href="/heat-pumps/">Heat pumps <span>→</span></a>
           <a href="/heat-pumps/">Heat pump costs <span>→</span></a>
-          <a href="/heat-pumps/">Are heat pumps worth it? <span>→</span></a>
-          <a href="/heat-pumps/">Heat pump or gas boiler? <span>→</span></a>
-          <a href="/free-insulation-grants/">Loft insulation <span>→</span></a>
-          <a href="/free-insulation-grants/">Cavity wall insulation <span>→</span></a>
           <a href="/ev-charger-grants/">EV charger grants <span>→</span></a>
         </div>
         <div class="guide-col">
           <h3>Quotes and checks</h3>
           <a href="/eligibility.html">Eligibility checker <span>→</span></a>
-          <a href="/eligibility.html">Solar panel quotes <span>→</span></a>
-          <a href="/eligibility.html">Heat pump quotes <span>→</span></a>
-          <a href="/eligibility.html">Grants in your area — start with your postcode <span>→</span></a>
         </div>
         <div class="guide-col">
-          <h3>Council guides</h3>
-          <a href="/eligibility.html">London council grants <span>→</span></a><a href="/eligibility.html">Birmingham council grants <span>→</span></a><a href="/eligibility.html">Manchester council grants <span>→</span></a><a href="/eligibility.html">Leeds council grants <span>→</span></a><a href="/eligibility.html">Glasgow council grants <span>→</span></a><a href="/eligibility.html">Liverpool council grants <span>→</span></a><a href="/eligibility.html">Bristol council grants <span>→</span></a><a href="/eligibility.html">Edinburgh council grants <span>→</span></a><a href="/eligibility.html">Chester council grants <span>→</span></a><a href="/eligibility.html">Chelmsford council grants <span>→</span></a><a href="/eligibility.html">Gloucester council grants <span>→</span></a><a href="/eligibility.html">Huddersfield council grants <span>→</span></a>
-        </div>
-        <div class="guide-col">
-          <h3>Energy blog</h3>
-          <a href="/eco4-scheme/">ECO4 changes in 2026 <span>→</span></a>
-          <a href="/heat-pumps/">Heat pump vs gas boiler <span>→</span></a>
-          <a href="/solar-panels/">Are solar panels worth it? <span>→</span></a>
-          <a href="/eco4-scheme/">What is LA Flex? <span>→</span></a>
-          <a href="/free-insulation-grants/">GBIS closed: what now? <span>→</span></a>
-          <a href="/government-grants/">Best grants for pensioners <span>→</span></a>
-          <a href="/free-insulation-grants/">How insulation works <span>→</span></a>
+          <h3>Grants in your area</h3>
+          <p style="font-size:.95rem;color:var(--muted);margin:0 0 10px">We cover the whole UK — check your postcode to see what is available where you live.</p>
+          <a href="/eligibility.html">Check your postcode <span>→</span></a>
         </div>
         <div class="guide-col">
           <h3>For installers</h3>
@@ -777,7 +780,6 @@ footer li{margin:0}
           <a href="/heat-pumps/">MCS certification explained <span>→</span></a>
           <a href="/free-insulation-grants/">TrustMark for insulation <span>→</span></a>
           <a href="mailto:info@heatfund.co.uk">Work with HeatFund <span>→</span></a>
-          <a href="/eligibility.html">How the checker works <span>→</span></a>
         </div>
       </div>
     </div>
@@ -791,7 +793,7 @@ footer li{margin:0}
           <h2>Straight answers</h2>
           <p>Something we haven't covered? Email<br><a href="mailto:info@heatfund.co.uk">info@heatfund.co.uk</a></p>
         </div>
-        <div class="faq-plain"><div class="fq"><h3>Do I have to qualify for a grant to use this?</h3><p>No. The guides and the eligibility check are open to every homeowner. If a grant doesn't cover your upgrade, we'll say so and show what it really costs, so you can still decide whether it's worth doing.</p></div><div class="fq"><h3>Am I eligible for free home improvements?</h3><p>Possibly — through ECO4 or the Warm Homes: Local Grant, which can fully fund insulation and heating for eligible households. ECO4 is for low-income and benefit households and work must be finished by 31 December 2026. The Warm Homes: Local Grant covers households on £36,000 or less, a qualifying benefit, or in a low-income postcode, through participating councils. Run the check and we'll confirm which route fits.</p></div><div class="fq"><h3>How much can I save with solar panels?</h3><p>A 4kW solar system is worth about £630 to £760 a year at October 2026 prices without a battery (DESNZ, PVGIS), and a typical installed system costs £6,600 to £7,800 with 0% VAT until 31 March 2027. What you save depends on your roof, how much electricity you use during the day, and whether you add a battery.</p></div><div class="fq"><h3>What is the ECO4 scheme?</h3><p>ECO4 is an energy supplier scheme that funds insulation and heating upgrades for low-income and benefit households. It's based on household eligibility and property efficiency, and it closes on 31 December 2026 — work has to be finished by then.</p></div><div class="fq"><h3>How does the Boiler Upgrade Scheme work?</h3><p>The Boiler Upgrade Scheme gives £7,500 off a heat pump in England and Wales — £9,000 for an air or ground source heat pump in oil- or LPG-heated homes with no mains gas until 31 March 2027, and £2,500 off air-to-air once MCS certifies installers. There's no income test and no EPC needed since 28 April 2026. An MCS-certified installer applies for the grant on your behalf, and there's one grant per property.</p></div><div class="fq"><h3>Do I need planning permission for solar panels?</h3><p>For most homes, rooftop solar panels are permitted development and don't need planning permission. Extra rules can apply to listed buildings and some conservation areas, and a certified installer will confirm the position for your home before any work starts.</p></div><div class="fq"><h3>How long does a heat pump installation take?</h3><p>Typically 2–3 days for an air source system once the survey and design are done. Whether radiators or pipework need changing is settled at the survey, before you commit to anything.</p></div><div class="fq"><h3>How does HeatFund make money?</h3><p>It's free for you. If you ask for a quote, the installer pays us for the introduction. Your details go to one suitable installer that covers your area, and only when you ask — never to a marketplace.</p></div></div>
+        <div class="faq-plain"><div class="fq"><h3>Do I have to qualify for a grant to use this?</h3><p>No. The guides and the eligibility check are open to every homeowner. If a grant doesn't cover your upgrade, we'll say so and show what it really costs, so you can still decide whether it's worth doing.</p></div><div class="fq"><h3>Am I eligible for free home improvements?</h3><p>Possibly — through ECO4 or the Warm Homes: Local Grant, which can fully fund insulation and heating for eligible households. ECO4 is for low-income and benefit households and work must be finished by 31 December 2026. The Warm Homes: Local Grant covers households on £36,000 or less, a qualifying benefit, or in a low-income postcode, through participating councils. Run the check and we'll confirm which route fits.</p></div><div class="fq"><h3>How much can I save with solar panels?</h3><p>A 4kW solar system is worth about £630 to £760 a year at October 2026 prices without a battery (DESNZ, PVGIS), and a typical installed system costs £6,600 to £7,800 with 0% VAT until 31 March 2027. What you save depends on your roof, how much electricity you use during the day, and whether you add a battery.</p></div><div class="fq"><h3>What is the ECO4 scheme?</h3><p>ECO4 is an energy supplier scheme that funds insulation and heating upgrades for low-income and benefit households. It's based on household eligibility and property efficiency, and it closes on 31 December 2026 — work has to be finished by then.</p></div><div class="fq"><h3>How does the Boiler Upgrade Scheme work?</h3><p>The Boiler Upgrade Scheme gives £7,500 off a heat pump in England and Wales — £9,000 for an air or ground source heat pump in oil- or LPG-heated homes with no mains gas until 31 March 2027, and £2,500 off air-to-air once MCS certifies installers. There's no income test and no EPC needed since 28 April 2026. An MCS-certified installer applies for the grant on your behalf, and there's one grant per property. <a href="https://www.gov.uk/apply-boiler-upgrade-scheme">Check the official Boiler Upgrade Scheme rules on GOV.UK</a>.</p></div><div class="fq"><h3>Do I need planning permission for solar panels?</h3><p>For most homes, rooftop solar panels are permitted development and don't need planning permission. Extra rules can apply to listed buildings and some conservation areas, and a certified installer will confirm the position for your home before any work starts.</p></div><div class="fq"><h3>How long does a heat pump installation take?</h3><p>Typically 2–3 days for an air source system once the survey and design are done. Whether radiators or pipework need changing is settled at the survey, before you commit to anything.</p></div><div class="fq"><h3>How does HeatFund make money?</h3><p>It's free for you. If you ask for a quote, the installer pays us for the introduction. Your details go to one suitable installer that covers your area, and only when you ask — never to a marketplace.</p></div></div>
       </div>
     </div>
   </section>
@@ -830,14 +832,11 @@ footer li{margin:0}
         <p style="font-size:.95rem">Email: <a href="mailto:info@heatfund.co.uk">info@heatfund.co.uk</a></p>
       </div>
       <div><h4>Grants &amp; Schemes</h4><ul>
-        <li><a href="/government-grants/">Government Grants</a></li>
         <li><a href="/government-grants/">UK Energy Grants 2026</a></li>
         <li><a href="/eco4-scheme/">ECO4 Scheme</a></li>
         <li><a href="/boiler-upgrade-scheme/">Boiler Upgrade Scheme</a></li>
-        <li><a href="/warm-homes-plan-2026/">Warm Homes Plan</a></li>
         <li><a href="/warm-homes-plan-2026/">Warm Homes: Local Grant</a></li>
         <li><a href="/vat-relief/">VAT Relief</a></li>
-        <li><a href="/government-grants/">Warm Home Discount</a></li>
       </ul></div>
       <div><h4>Services</h4><ul>
         <li><a href="/solar-panels/">Solar Panels</a></li>
@@ -846,46 +845,26 @@ footer li{margin:0}
         <li><a href="/boiler-upgrade-scheme/">Boiler Upgrade</a></li>
         <li><a href="/battery-storage/">Battery Storage</a></li>
         <li><a href="/ev-charger-grants/">EV Charger Grants</a></li>
-        <li><a href="/solar-panels/">Solar Panel Costs</a></li>
         <li><a href="/eligibility.html">Eligibility Checker</a></li>
       </ul></div>
       <div><h4>Property Tools</h4><ul>
         <li><a href="/eligibility.html">Eligibility Checker</a></li>
         <li><a href="https://www.gov.uk/find-energy-certificate">EPC Checker (GOV.UK)</a></li>
-        <li><a href="/government-grants/">Grant Deadline Tracker</a></li>
         <li><a href="/solar-panels/">Solar Savings Guide</a></li>
         <li><a href="/heat-pumps/">Heat Pump Cost Guide</a></li>
-        <li><a href="/free-insulation-grants/">Insulation Grant Finder</a></li>
       </ul></div>
     </div>
     <div class="footer-grid3">
-      <div><h4>Top Locations</h4><ul>
-        <li><a href="/eligibility.html">London</a></li>
-        <li><a href="/eligibility.html">Birmingham</a></li>
-        <li><a href="/eligibility.html">Manchester</a></li>
-        <li><a href="/eligibility.html">Leeds</a></li>
-        <li><a href="/eligibility.html">Glasgow</a></li>
-        <li><a href="/eligibility.html">Liverpool</a></li>
-        <li><a href="/eligibility.html">Bristol</a></li>
-        <li><a href="/eligibility.html">Edinburgh</a></li>
-        <li><a href="/eligibility.html">Chester</a></li>
-        <li><a href="/eligibility.html">Chelmsford</a></li>
-        <li><a href="/eligibility.html">Gloucester</a></li>
-        <li><a href="/eligibility.html">Huddersfield</a></li>
-      </ul></div>
+      <div><h4>Grants in your area</h4><p class="fdesc">We cover the whole UK — check your postcode to see what is available where you live.</p><p style="font-size:.95rem"><a href="/eligibility.html">Check your postcode →</a></p></div>
       <div><h4>Popular Guides</h4><ul>
         <li><a href="/free-insulation-grants/">Free Insulation Grants</a></li>
         <li><a href="/solar-panels/">Solar Panel Grants</a></li>
         <li><a href="/eco4-scheme/">ECO4 Eligibility</a></li>
-        <li><a href="/eco4-scheme/">What Replaces ECO4</a></li>
         <li><a href="/heat-pumps/">Are Heat Pumps Worth It?</a></li>
         <li><a href="/ev-charger-grants/">EV Charger Costs</a></li>
-        <li><a href="/government-grants/">Best Grants for Pensioners</a></li>
-        <li><a href="/free-insulation-grants/">GBIS Closed: Alternatives</a></li>
       </ul></div>
       <div><h4>Company</h4><ul>
         <li><a href="/about/">About Us</a></li>
-        <li><a href="/#about">What is HeatFund?</a></li>
         <li><a href="mailto:info@heatfund.co.uk">Contact Us</a></li>
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
         <li><a href="/cookie-policy/">Cookie Policy</a></li>
@@ -893,7 +872,6 @@ footer li{margin:0}
         <li><a href="/terms/">Terms of Use</a></li>
         <li><a href="/disclaimer/">Disclaimer</a></li>
         <li><a href="/editorial-policy/">Editorial Policy</a></li>
-        <li><a href="/#guides">Blog</a></li>
       </ul></div>
     </div>
     <p class="bottom-line">HeatFund is an independent energy guide. We are not affiliated with Great British Energy, the publicly owned energy company (gbe.gov.uk), or HM Government, and we are not a grant administrator or an installer. Information is checked against official government sources but may change. Always check gov.uk for the latest eligibility criteria.</p>
