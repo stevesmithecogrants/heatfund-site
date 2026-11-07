@@ -300,6 +300,7 @@ var card=document.getElementById('formCard'),steps=document.querySelectorAll('.w
 var countEl=document.getElementById('wizCount'),barEl=document.getElementById('wizBar'),errEl=document.getElementById('wizError');
 var backBtn=document.getElementById('wizBack'),nextBtn=document.getElementById('wizNext'),submitBtn=document.getElementById('wizSubmit');
 var pc=document.getElementById('ef-postcode'),epcPc=document.getElementById('ef-epc-postcode');
+var carried=false;
 function scrollCard(){requestAnimationFrame(function(){card.scrollIntoView({behavior:'smooth',block:'start'});});}
 function showErr(m){errEl.textContent=m||'';errEl.style.display=m?'block':'none';}
 function rv(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
@@ -333,7 +334,7 @@ function render(){
  showErr('');
  if(current===4){epcPc.value=pc.value.trim().toUpperCase();syncChip();}
 }
-function syncChip(){var chip=document.getElementById('epcChip');var has=!!pc.value.trim();chip.style.display=has?'inline-block':'none';if(has)chip.textContent='\u2713 Postcode carried over from the homepage: '+pc.value.trim().toUpperCase();}
+function syncChip(){var chip=document.getElementById('epcChip');var has=carried&&!!pc.value.trim();chip.style.display=has?'inline-block':'none';if(has)chip.textContent='\u2713 Postcode carried over from the homepage: '+pc.value.trim().toUpperCase();}
 nextBtn.addEventListener('click',function(){var e=validate(current);if(e){showErr(e);scrollCard();return;}if(current<TOTAL){current++;render();scrollCard();}});
 backBtn.addEventListener('click',function(){if(current>1){current--;render();scrollCard();}});
 document.getElementById('epcFindBtn').addEventListener('click',function(){
@@ -343,8 +344,8 @@ document.getElementById('epcFindBtn').addEventListener('click',function(){
  f.style.display='block';});
 var none=document.getElementById('ef-benefit-none'),boxes=document.querySelectorAll('input[name="ef-benefits"]');
 boxes.forEach(function(b){b.addEventListener('change',function(){if(b===none&&b.checked){boxes.forEach(function(x){if(x!==none)x.checked=false;});}else if(b.checked){none.checked=false;}});});
-try{var sp=(new URLSearchParams(location.search).get('postcode')||'').trim();if(sp){pc.value=sp;epcPc.value=sp.toUpperCase();var c=document.getElementById('pcReceived');c.textContent='\u2713 Postcode carried over from the homepage: '+sp.toUpperCase();c.style.display='block';syncChip();}}catch(e){}
-pc.addEventListener('input',function(){epcPc.value=pc.value;});
+try{var sp=(new URLSearchParams(location.search).get('postcode')||'').trim();if(sp){pc.value=sp;epcPc.value=sp.toUpperCase();carried=true;var c=document.getElementById('pcReceived');c.textContent='\u2713 Postcode carried over from the homepage: '+sp.toUpperCase();c.style.display='block';syncChip();}}catch(e){}
+pc.addEventListener('input',function(){epcPc.value=pc.value;carried=false;syncChip();});
 var icon=document.querySelector('link[rel="icon"]'),t=new Image();t.onerror=function(){if(icon)icon.href='/assets/favicon.png';};t.src='/favicon.png';
 render();
 document.getElementById('eligForm').addEventListener('submit',function(ev){
