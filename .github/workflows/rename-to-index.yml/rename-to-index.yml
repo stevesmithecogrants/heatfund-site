@@ -1,0 +1,31 @@
+name: Rename guides to index
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename files with git mv
+        run: |
+          git config user.name "stevesmithecogrants"
+          git config user.email "stevesmithecogrants@gmail.com"
+          git rm -q eligibility.html
+          git mv heatfund-eligibility-wizard.html eligibility.html
+          cp eligibility.html assets/eligibility.html
+          git add assets/eligibility.html
+          git mv solar-panels/heatfund-solar-panels.html solar-panels/index.html
+          git mv heat-pumps/heat-pumps.html heat-pumps/index.html
+          git mv free-insulation-grants/heatfund-insulation.html free-insulation-grants/index.html
+          git mv boiler-upgrade-scheme/heatfund-boiler-upgrade.html boiler-upgrade-scheme/index.html
+          git mv battery-storage/heatfund-battery-storage.html battery-storage/index.html
+          git mv ev-charger-grants/ev-charger-grants.html ev-charger-grants/index.html
+          git mv government-grants/heatfund-government-grants.html government-grants/index.html
+          git mv eco4-scheme/eco4-scheme.html eco4-scheme/index.html
+          git mv warm-homes-plan-2026/heatfund-warm-homes-plan.html warm-homes-plan-2026/index.html
+          ls -l eligibility.html assets/eligibility.html solar-panels/index.html heat-pumps/index.html free-insulation-grants/index.html boiler-upgrade-scheme/index.html battery-storage/index.html ev-charger-grants/index.html government-grants/index.html eco4-scheme/index.html warm-homes-plan-2026/index.html vat-relief/index.html
+          git status --short
+          git commit -m "Rename guide files to index.html and wizard to eligibility.html"
+          git push
