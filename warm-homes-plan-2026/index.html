@@ -14,7 +14,7 @@
 body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:17px;line-height:1.65}
 a{color:var(--green);text-decoration:none}
 h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);line-height:1.1;margin:0;font-weight:700}
-h1{font-size:clamp(2.3rem,5vw,3.6rem)}h2{font-size:clamp(1.7rem,3.4vw,2.4rem)}h3{font-size:1.3rem}
+h1{font-size:clamp(2.3rem,5vw,3.6rem)}h1 em,h2 em{color:var(--green);font-style:italic}h2{font-size:clamp(1.7rem,3.4vw,2.4rem)}h3{font-size:1.3rem}
 .it{font-style:italic;color:var(--green)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:999px;font-weight:700;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
@@ -24,6 +24,7 @@ section{padding:44px 0}
 .topbar{position:sticky;top:12px;z-index:50;padding:0 16px}
 .nav{max-width:1720px;margin:0 auto;background:rgba(253,252,248,.97);border:1px solid var(--line);border-radius:999px;box-shadow:0 8px 30px rgba(0,6,47,.10);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px}
 .logo{display:inline-flex;align-items:center;gap:8px;font-family:'Fraunces',serif;font-weight:800;font-size:1.9rem;color:var(--navy);line-height:1;white-space:nowrap}
+.logo,.logo:hover{text-decoration:none!important}
 .logo img{height:27px;width:auto}
 .logo .wordmark span{color:var(--green)}
 .navlinks{display:flex;gap:4px;align-items:center;flex:1;justify-content:flex-end}
@@ -148,7 +149,7 @@ footer a{color:#fff}footer ul{list-style:none;padding:0;margin:0}footer li a{dis
 <main><section style="padding-top:34px"><div class="wrap">
 <a class="g-back" href="/index.html">← Back to home</a>
 <p class="g-eyebrow">Grants · Warm Homes Plan</p>
-<h1>What replaces ECO4? Warm Homes Plan 2026 explained</h1>
+<h1>What replaces ECO4? <em>Warm Homes Plan 2026 explained</em></h1>
 <p class="g-updated">Last updated: 7 November 2026 · Written by the HeatFund editorial team · Checked against GOV.UK guidance</p>
 <p class="g-intro">ECO4 is due to end on 31 December 2026. From January 2027, support for low-income homes in England moves under the Warm Homes Plan — with the Warm Homes: Local Grant already running through councils as the main route you can apply for today.</p>
 
@@ -283,7 +284,7 @@ footer a{color:#fff}footer ul{list-style:none;padding:0;margin:0}footer li a{dis
         <li><a href="/free-insulation-grants/">GBIS Closed: Alternatives</a></li>
       </ul></div>
       <div><h4>Company</h4><ul>
-        <li><a href="/#about">About Us</a></li>
+        <li><a href="/about/">About Us</a></li>
         <li><a href="/#about">What is HeatFund?</a></li>
         <li><a href="mailto:info@heatfund.co.uk">Contact Us</a></li>
         <li><a href="/privacy-policy/">Privacy Policy</a></li>
