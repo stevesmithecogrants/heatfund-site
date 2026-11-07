@@ -13,7 +13,7 @@ jobs:
           set -euo pipefail
           git config user.name "stevesmithecogrants"
           git config user.email "stevesmithecogrants@gmail.com"
-          for pair in "solar-panels/heatfund-solar-panels.html solar-panels/index.html" "heat-pumps/heat-pumps.html heat-pumps/index.html" "free-insulation-grants/heatfund-insulation.html free-insulation-grants/index.html" "boiler-upgrade-scheme/heatfund-boiler-upgrade.html boiler-upgrade-scheme/index.html" "battery-storage/heatfund-battery-storage.html battery-storage/index.html" "ev-charger-grants/ev-charger-grants.html ev-charger-grants/index.html" "government-grants/heatfund-government-grants.html government-grants/index.html" "warm-homes-plan-2026/heatfund-warm-homes-plan.html warm-homes-plan-2026/index.html"; do
+          for pair in "solar-panels/heatfund-solar-panels.html solar-panels/index.html" "heat-pumps/heat-pumps.html heat-pumps/index.html" "free-insulation-grants/heatfund-insulation.html free-insulation-grants/index.html" "boiler-upgrade-scheme/heatfund-boiler-upgrade.html boiler-upgrade-scheme/index.html" "battery-storage/heatfund-battery-storage.html battery-storage/index.html" "ev-charger-grants/ev-charger-grants.html ev-charger-grants/index.html" "government-grants/heatfund-government-grants.html government-grants/index.html" "eco4-scheme/eco4-scheme.html eco4-scheme/index.html" "warm-homes-plan-2026/heatfund-warm-homes-plan.html warm-homes-plan-2026/index.html"; do
             set -- $pair
             git rm -q "$2"
             git mv "$1" "$2"
