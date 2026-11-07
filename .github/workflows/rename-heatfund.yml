@@ -1,0 +1,24 @@
+name: Rename heatfund to index
+on:
+  push:
+    paths:
+      - '.github/workflows/rename-heatfund.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename heatfund.html to index.html
+        run: |
+          if [ -f heatfund.html ] && [ ! -f index.html ]; then
+            git mv heatfund.html index.html
+            git config user.name "stevesmithecogrants"
+            git config user.email "stevesmithecogrants@gmail.com"
+            git commit -m "Rename heatfund.html to index.html"
+            git push
+          else
+            echo "Nothing to rename"
+          fi
