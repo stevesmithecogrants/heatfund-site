@@ -13,16 +13,12 @@ jobs:
           set -euo pipefail
           git config user.name "stevesmithecogrants"
           git config user.email "stevesmithecogrants@gmail.com"
-          git rm -q eligibility.html
-          git mv heatfund-eligibility-wizard.html eligibility.html
-          cp eligibility.html assets/eligibility.html
-          git add assets/eligibility.html
-          for pair in "solar-panels/heatfund-solar-panels.html solar-panels/index.html" "heat-pumps/heat-pumps.html heat-pumps/index.html" "free-insulation-grants/heatfund-insulation.html free-insulation-grants/index.html" "boiler-upgrade-scheme/heatfund-boiler-upgrade.html boiler-upgrade-scheme/index.html" "battery-storage/heatfund-battery-storage.html battery-storage/index.html" "ev-charger-grants/ev-charger-grants.html ev-charger-grants/index.html" "government-grants/heatfund-government-grants.html government-grants/index.html" "eco4-scheme/eco4-scheme.html eco4-scheme/index.html" "warm-homes-plan-2026/heatfund-warm-homes-plan.html warm-homes-plan-2026/index.html"; do
+          for pair in "solar-panels/heatfund-solar-panels.html solar-panels/index.html" "heat-pumps/heat-pumps.html heat-pumps/index.html" "free-insulation-grants/heatfund-insulation.html free-insulation-grants/index.html" "boiler-upgrade-scheme/heatfund-boiler-upgrade.html boiler-upgrade-scheme/index.html" "battery-storage/heatfund-battery-storage.html battery-storage/index.html" "ev-charger-grants/ev-charger-grants.html ev-charger-grants/index.html" "government-grants/heatfund-government-grants.html government-grants/index.html" "warm-homes-plan-2026/heatfund-warm-homes-plan.html warm-homes-plan-2026/index.html"; do
             set -- $pair
             git rm -q "$2"
             git mv "$1" "$2"
           done
-          wc -c eligibility.html assets/eligibility.html solar-panels/index.html heat-pumps/index.html free-insulation-grants/index.html boiler-upgrade-scheme/index.html battery-storage/index.html ev-charger-grants/index.html government-grants/index.html eco4-scheme/index.html warm-homes-plan-2026/index.html
+          wc -c solar-panels/index.html heat-pumps/index.html free-insulation-grants/index.html boiler-upgrade-scheme/index.html battery-storage/index.html ev-charger-grants/index.html government-grants/index.html eco4-scheme/index.html warm-homes-plan-2026/index.html
           test $(wc -c < solar-panels/index.html) -gt 60000
           test $(wc -c < heat-pumps/index.html) -gt 60000
           test $(wc -c < free-insulation-grants/index.html) -gt 60000
@@ -32,8 +28,6 @@ jobs:
           test $(wc -c < government-grants/index.html) -gt 60000
           test $(wc -c < eco4-scheme/index.html) -gt 60000
           test $(wc -c < warm-homes-plan-2026/index.html) -gt 60000
-          test $(wc -c < eligibility.html) -gt 30000
-          test $(wc -c < assets/eligibility.html) -gt 30000
           git status --short
-          git commit -m "Rename guide files to index.html and wizard to eligibility.html (full files)"
+          git commit -m "Rename guide files to index.html (full files)"
           git push
