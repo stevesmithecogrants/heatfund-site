@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Check Your Eligibility for Free Energy Grants with HeatFund. Free check, no obligation.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon.ico?v=2">
+<title>Check Your Eligibility for Free Energy Grants | HeatFund</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5f3ee;--paper:#fffef9;--navy:#00062f;--navy2:#0b1445;--ink:#1a2233;--muted:#6b7280;--grey:#5b6478;--green:#268f00;--green-dark:#1e7a00;--green-pale:#e8f5e0;--green-pale2:#e2f1da;--green-text:#2f7917;--line:#d8d8d8;--track:#edecea;--gold:#ceae09;--shadow:0 10px 34px rgba(0,6,47,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--green);text-decoration:none}
+h1,h2{font-family:'Fraunces',Georgia,serif;color:var(--navy);line-height:1.1;margin:0;font-weight:700}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.topbar{position:sticky;top:12px;z-index:50;padding:0 16px}
+.nav{max-width:1180px;margin:0 auto;background:rgba(255,254,249,.97);border:1px solid #e7e1d3;border-radius:999px;box-shadow:0 8px 30px rgba(0,6,47,.10);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 6px 6px 20px}
+.logo{display:inline-flex;align-items:center;gap:8px;font-family:'Fraunces',serif;font-weight:800;font-size:1.9rem;color:var(--navy);line-height:1;white-space:nowrap}
+.logo img{height:27px;width:auto;display:block}
+.logo span{color:var(--green)}
+.navlinks{display:flex;gap:4px;align-items:center}
+.navlinks a{color:#626b80;font-weight:500;font-size:.88rem;padding:8px 14px;white-space:nowrap}
+.btn-check{background:var(--navy);color:#fff!important;padding:10px 22px;border-radius:999px;font-size:.88rem;font-weight:600}
+@media(max-width:900px){.navlinks{display:none}}
+@media(max-width:640px){.logo{font-size:1.55rem}.logo img{height:23px}.topbar{top:8px;padding:0 10px}}
+</style>
+</head>
+<body>
+<div class="topbar"><nav class="nav" aria-label="Main">
+<a class="logo" href="/index.html"><img src="/flame-logo.png" alt="" onerror="this.onerror=null;this.src='/assets/flame-logo.png'">Heat<span>Fund</span></a>
+<div class="navlinks"><a href="/solar-panels/">Solar Panels</a><a href="/heat-pumps/">Heat Pumps</a><a href="/eco4-scheme/">ECO4</a><a href="/government-grants/">Grants</a></div>
+<a class="btn-check" href="/eligibility.html">Check Eligibility</a>
+</nav></div>
+<style>
+.page-head{max-width:720px;margin:34px auto 0;padding:0 20px;text-align:center}
+.page-head h1{font-size:clamp(2rem,5vw,2.5rem);letter-spacing:-.01em}
+.deadline-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:22px auto 18px;max-width:760px;padding:0 20px}
+.deadline-pill{background:var(--navy);color:var(--gold);border-radius:999px;padding:8px 18px;font-size:.86rem;font-weight:700;text-align:center}
+.deadline-pill i{font-style:normal;color:var(--gold)}
+.updated{font-size:.82rem;color:#8a8f98;white-space:nowrap}
+.card-wrap{max-width:632px;margin:0 auto;padding:0 16px}
+.form-card{background:var(--paper);border-radius:22px;box-shadow:0 2px 20px rgba(0,6,47,.06),0 12px 40px rgba(0,6,47,.06);padding:24px 30px 28px;scroll-margin-top:96px}
+@media(max-width:640px){.form-card{padding:20px 18px 24px}}
+.wiz-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:8px}
+.wiz-count{font-size:.84rem;font-weight:700;color:var(--navy)}
+.wiz-free{font-size:.82rem;color:#8a8f98}
+.progress{height:4px;background:var(--track);border-radius:999px;overflow:hidden;margin-bottom:26px}
+.progress-bar{height:100%;background:var(--green);width:11.11%;transition:width .35s ease}
+.wstep{display:none}.wstep.active{display:block}
+.wstep h2{font-size:1.75rem;text-align:left;margin-bottom:6px}
+.step-help{color:var(--grey);font-size:.96rem;margin:0 0 20px;line-height:1.55}
+.subhead{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-size:1.3rem;font-weight:700;margin:26px 0 4px}
+.flabel{display:block;font-weight:700;color:var(--navy);font-size:.92rem;margin:0 0 7px}
+.fhelp{font-size:.85rem;color:var(--muted);margin:4px 0 0}
+.field{margin-bottom:16px}
+.field input[type=text],.field input[type=email],.field input[type=tel]{width:100%;height:50px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:#fff;font:inherit;font-size:16px;color:var(--navy)}
+.field input::placeholder{color:#b6b6b6}
+.field input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px var(--green-pale)}
+.field input.invalid{border-color:#d92d20!important}
+.field input[disabled]{background:#f1f0ec;color:#9a9a9a;cursor:not-allowed}
+.chip{display:none;background:var(--green-pale);color:var(--green-text);border-radius:999px;padding:6px 12px;font-size:.82rem;font-weight:600;margin-top:8px;width:fit-content}
+.pc-chip-page{display:none;background:var(--green-pale);color:var(--green-text);border-radius:999px;padding:8px 14px;font-size:.88rem;font-weight:600;margin:0 auto 14px;width:fit-content;text-align:center}
+</style>
+<style>
+.opts{display:flex;flex-direction:column;gap:12px}
+.oc{position:relative;display:block;cursor:pointer}
+.oc input{position:absolute;opacity:0;pointer-events:none}
+.oc .oc-box{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;transition:border-color .15s,background .15s}
+.oc:hover .oc-box{border-color:var(--green)}
+.oc .dot{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #c9c9c9;background:#fff;position:relative}
+.oc .sq{flex:none;width:20px;height:20px;border-radius:5px;border:2px solid #c9c9c9;background:#fff;color:#fff;display:grid;place-items:center;font-size:13px;line-height:1}
+.oc .oc-label{font-weight:700;color:var(--navy);font-size:.95rem;line-height:1.35}
+.oc input:checked+.oc-box{background:var(--green-pale2);border-color:var(--green)}
+.oc input:checked+.oc-box .dot{background:var(--green);border-color:var(--green);box-shadow:inset 0 0 0 4px #fff}
+.oc input:checked+.oc-box .sq{background:var(--green);border-color:var(--green)}
+.oc input:focus-visible+.oc-box{outline:2px solid var(--green);outline-offset:2px}
+.wiz-nav{display:flex;align-items:center;gap:16px;margin-top:26px}
+.btn-back{background:none;border:none;font:inherit;font-weight:600;color:var(--navy);cursor:pointer;padding:10px 4px;white-space:nowrap;font-size:.95rem}
+.btn-continue{flex:1;height:50px;border:none;border-radius:999px;background:var(--green);color:#fff;font:inherit;font-weight:700;font-size:1.02rem;cursor:pointer}
+.btn-continue:hover{background:var(--green-dark)}
+.btn-continue:disabled{opacity:.7;cursor:wait}
+.btn-continue.is-gated{background:#c4ddba;cursor:not-allowed;opacity:1}
+.btn-small{height:54px;padding:0 26px;border:none;border-radius:999px;background:var(--green);color:#fff;font:inherit;font-weight:700;font-size:.98rem;cursor:pointer}
+.btn-small:hover{background:var(--green-dark)}
+.wiz-error{display:none;background:#fff7e0;border:1px solid #f0d48a;color:#7a3b00;border-radius:12px;padding:12px 15px;font-size:.92rem;font-weight:600;margin-top:16px;line-height:1.5}
+.epc-confirm{display:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:16px}
+.epc-confirm h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-size:1.25rem;margin:0 0 16px}
+.epc-confirm-row{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.epc-badge{flex:none;width:64px;height:64px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:2rem;line-height:1}
+.epc-confirm-addr{font-weight:700;color:var(--navy);font-size:1rem;line-height:1.4}
+.epc-confirm-rated{color:var(--muted);font-size:.94rem;margin-top:2px}
+.epc-confirm-btns{display:flex;gap:12px}
+.epc-btn-yes{flex:1.25;min-width:0;height:50px;border:none;border-radius:999px;background:var(--green);color:#fff;font:inherit;font-weight:700;font-size:1rem;cursor:pointer;padding:0 14px}
+.epc-btn-yes:hover{background:var(--green-dark)}
+.epc-btn-no{flex:1;min-width:0;height:50px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);font:inherit;font-weight:700;font-size:1rem;cursor:pointer;padding:0 14px}
+.epc-btn-no:hover{border-color:var(--navy)}
+.epc-attrib{display:none;font-size:.86rem;color:var(--muted);margin-top:12px}
+@media(max-width:520px){.epc-confirm-btns{flex-direction:column}.epc-confirm{padding:16px}}
+.epc-none{display:none;background:#eaf2fb;border:1px solid #bcd6f5;border-radius:12px;padding:14px 16px;margin-top:16px;color:#1d3a5f;font-size:.94rem}
+.epc-checking{display:none;margin-top:16px;font-size:.92rem;color:var(--muted)}
+.epc-rate-q{margin-top:24px}
+.epc-rate-q h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);font-size:1.15rem;margin:0 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.epc-opt-pill{background:#f1f0ec;color:var(--muted);border-radius:999px;padding:3px 11px;font-size:.76rem;font-weight:700;font-family:'Inter',sans-serif}
+.epc-rate{display:block;cursor:pointer;position:relative}
+.epc-rate input{position:absolute;opacity:0;pointer-events:none}
+.epc-rate .pill{display:grid;place-items:center;min-height:52px;background:#fff;border:1px solid var(--line);border-radius:12px;font-weight:700;color:var(--navy);font-size:1rem;transition:border-color .15s,background .15s}
+.epc-rate:hover .pill{border-color:var(--green)}
+.epc-rate input:checked+.pill{background:var(--green-pale2);border-color:var(--green)}
+.epc-rate input:focus-visible+.pill{outline:2px solid var(--green);outline-offset:2px}
+.epc-rate-row{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:10px}
+@media(max-width:520px){.epc-rate-row{grid-template-columns:repeat(4,1fr)}}
+.epc-note{font-size:.88rem;color:var(--muted);margin-top:12px}
+.trust-pills{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.trust-pills span{background:var(--green-pale);color:var(--green-text);border-radius:999px;padding:7px 12px;font-size:.84rem;font-weight:600}
+.call-note{font-size:.92rem;color:#3d465e;margin:12px 0 0}
+.consent{display:flex;gap:11px;align-items:flex-start;margin-top:16px;cursor:pointer;background:#f9f8f3;border:1px solid #e7e1d3;border-radius:12px;padding:14px 15px}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--green)}
+.consent span{font-size:.93rem;line-height:1.55}
+.privacy-note{background:#f1f0ec;border-radius:12px;padding:13px 15px;font-size:.86rem;color:var(--grey);line-height:1.6;margin-top:16px}
+.success{display:none;text-align:center;padding:18px 6px 6px}
+.success .tick{width:64px;height:64px;border-radius:50%;background:var(--green-pale);color:var(--green);display:grid;place-items:center;font-size:32px;margin:0 auto 16px;font-weight:800}
+.success h2{font-size:1.7rem;margin-bottom:8px}
+.success p{color:#3d465e;margin:0}
+</style>
+<style>
+.below{max-width:632px;margin:34px auto 0;padding:0 16px 10px}
+.below h2{font-size:1.55rem;margin-bottom:12px}
+.after-steps{display:flex;flex-direction:column;gap:12px}
+.after-step{background:var(--paper);border-radius:16px;padding:18px 20px;box-shadow:0 2px 14px rgba(0,6,47,.05)}
+.after-step .n{width:30px;height:30px;border-radius:50%;background:var(--green-pale);color:var(--green-text);font-weight:800;display:grid;place-items:center;font-size:.9rem;margin-bottom:8px}
+.after-step h3{font-family:'Inter',sans-serif;color:var(--navy);font-size:1rem;margin:0 0 5px}
+.after-step p{margin:0;color:#3d465e;font-size:.94rem}
+.trustline,.sources,.disclaimer-box{margin-top:26px}
+.trustline{background:var(--paper);border-radius:16px;padding:16px 20px;box-shadow:0 2px 14px rgba(0,6,47,.05);font-weight:600;color:#3d465e;font-size:.94rem;display:flex;flex-wrap:wrap;gap:8px 20px}
+.trustline i{color:var(--green);font-style:normal;font-weight:800}
+.sources p,.sources li{color:#3d465e;font-size:.94rem}
+.sources ul{padding-left:20px;margin:8px 0 0}
+.disclaimer-box{background:#efece4;border-radius:16px;padding:18px 20px;font-size:.9rem;color:var(--grey);line-height:1.65}
+.disclaimer-box b{color:var(--navy)}
+footer{background:var(--navy);color:#c9cede;margin-top:52px}
+.footer-in{max-width:1180px;margin:0 auto;padding:42px 20px 26px}
+.footer-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:28px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+footer h4{color:#9aa3bc;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;margin:0 0 12px;font-family:'Inter',sans-serif}
+footer ul{list-style:none;padding:0;margin:0}footer li a{display:block;padding:7px 0;color:#fff;font-size:.94rem}
+footer .fdesc{font-size:.93rem;line-height:1.6;max-width:22rem}
+.bottom-line{font-size:.86rem;color:#9aa3bc;line-height:1.6;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);text-align:center;margin-top:26px}
+.copy{font-size:.86rem;color:#9aa3bc;padding-top:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+<main>
+<div class="page-head"><h1>Check Your Eligibility for Free Energy Grants</h1></div>
+<div class="deadline-row"><span class="deadline-pill"><i>●</i> ECO4 ends 31 December 2026: check before the deadline.</span><span class="updated">Last updated: 10 October 2026</span></div>
+<div class="card-wrap">
+<p class="pc-chip-page" id="pcReceived" role="status"></p>
+<form id="eligForm" novalidate>
+<div class="form-card" id="formCard">
+<div id="wizardBody">
+<div class="wiz-top"><span class="wiz-count" id="wizCount">Step 1 of 9</span><span class="wiz-free">Free · no obligation</span></div>
+<div class="progress"><div class="progress-bar" id="wizBar"></div></div>
+<div class="wstep active" data-step="1">
+<h2>What is your postcode?</h2>
+<p class="step-help">We use your postcode to check which grants and schemes cover your area.</p>
+<div class="field"><label class="flabel" for="ef-postcode">Your postcode</label>
+<input type="text" id="ef-postcode" name="postcode" placeholder="SW1A 1AA" autocomplete="postal-code">
+<p class="fhelp">Enter your full home postcode.</p></div>
+</div>
+
+<div class="wstep" data-step="2">
+<h2>Do you own or rent your home?</h2>
+<p class="step-help">This helps us work out which schemes you may be eligible for.</p>
+<div class="opts" role="radiogroup">
+<label class="oc"><input type="radio" name="ef-tenure" value="Home owner"><span class="oc-box"><span class="dot"></span><span class="oc-label">Home owner</span></span></label>
+<label class="oc"><input type="radio" name="ef-tenure" value="Private tenant"><span class="oc-box"><span class="dot"></span><span class="oc-label">Private tenant</span></span></label>
+<label class="oc"><input type="radio" name="ef-tenure" value="Social housing tenant"><span class="oc-box"><span class="dot"></span><span class="oc-label">Social housing tenant</span></span></label>
+<label class="oc"><input type="radio" name="ef-tenure" value="Landlord"><span class="oc-box"><span class="dot"></span><span class="oc-label">Landlord</span></span></label>
+</div></div>
+
+<div class="wstep" data-step="3">
+<h2>What type of home do you live in?</h2>
+<p class="step-help">Different property types qualify for different improvements.</p>
+<div class="opts" role="radiogroup">
+<label class="oc"><input type="radio" name="ef-property" value="Detached"><span class="oc-box"><span class="dot"></span><span class="oc-label">Detached</span></span></label>
+<label class="oc"><input type="radio" name="ef-property" value="Semi-detached"><span class="oc-box"><span class="dot"></span><span class="oc-label">Semi-detached</span></span></label>
+<label class="oc"><input type="radio" name="ef-property" value="Terraced"><span class="oc-box"><span class="dot"></span><span class="oc-label">Terraced</span></span></label>
+<label class="oc"><input type="radio" name="ef-property" value="Flat or maisonette"><span class="oc-box"><span class="dot"></span><span class="oc-label">Flat or maisonette</span></span></label>
+<label class="oc"><input type="radio" name="ef-property" value="Bungalow"><span class="oc-box"><span class="dot"></span><span class="oc-label">Bungalow</span></span></label>
+<label class="oc"><input type="radio" name="ef-property" value="Other"><span class="oc-box"><span class="dot"></span><span class="oc-label">Other</span></span></label>
+</div></div>
+
+<div class="wstep" data-step="4">
+<h2>Let&rsquo;s find your home</h2>
+<p class="step-help">We&rsquo;ll check this address on the official EPC register as part of your eligibility check.</p>
+<div class="field"><label class="flabel" for="ef-house">House number or name</label>
+<input type="text" id="ef-house" name="house" placeholder="e.g. 42 or Rose Cottage"></div>
+<div class="field"><label class="flabel" for="ef-epc-postcode">Your postcode</label>
+<input type="text" id="ef-epc-postcode" name="epc-postcode" disabled>
+<span class="chip" id="epcChip"></span></div>
+<button class="btn-small" type="button" id="epcFindBtn">Find my home &rarr;</button>
+<div class="epc-checking" id="epcChecking" role="status">Checking the EPC register&hellip;</div>
+<div class="epc-confirm" id="epcConfirm" role="status">
+<h3>Is this your home?</h3>
+<div class="epc-confirm-row">
+<span class="epc-badge" id="epcBadge">D</span>
+<div><div class="epc-confirm-addr" id="epcConfirmAddr"></div>
+<div class="epc-confirm-rated" id="epcConfirmRated"></div></div>
+</div>
+<div class="epc-confirm-btns">
+<button class="epc-btn-yes" type="button" id="epcYesBtn">Yes, that&rsquo;s my home</button>
+<button class="epc-btn-no" type="button" id="epcNoBtn">No, change it</button>
+</div>
+</div>
+<p class="epc-attrib" id="epcAttrib">EPC data from the <a href="https://find-energy-certificate.service.gov.uk/" target="_blank" rel="noopener">official EPC register</a> &mdash; the UK government&rsquo;s free EPC lookup.</p>
+<div class="epc-none" id="epcNone" role="status"></div>
+<div class="epc-rate-q" id="epcRateQ" style="display:none">
+<h3>Do you know your EPC rating? <span class="epc-opt-pill">Optional</span></h3>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="Don't know" checked><span class="pill">Don&rsquo;t know</span></label>
+<div class="epc-rate-row">
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="A"><span class="pill">A</span></label>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="B"><span class="pill">B</span></label>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="C"><span class="pill">C</span></label>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="D"><span class="pill">D</span></label>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="E"><span class="pill">E</span></label>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="F"><span class="pill">F</span></label>
+<label class="epc-rate"><input type="radio" name="ef-epc-rating" value="G"><span class="pill">G</span></label>
+</div>
+</div>
+<p class="epc-note">You can check your rating any time on the <a href="https://www.gov.uk/find-energy-certificate" target="_blank" rel="noopener">GOV.UK EPC Checker</a>.</p>
+</div>
+<div class="wstep" data-step="5">
+<h2>Do you receive any of these benefits?</h2>
+<p class="step-help">Select all that apply. A qualifying benefit is the fastest route into funded schemes such as ECO4.</p>
+<div class="opts">
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Universal Credit"><span class="oc-box"><span class="sq"></span><span class="oc-label">Universal Credit</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Pension Credit"><span class="oc-box"><span class="sq"></span><span class="oc-label">Pension Credit</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Child Benefit"><span class="oc-box"><span class="sq"></span><span class="oc-label">Child Benefit</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Income Support"><span class="oc-box"><span class="sq"></span><span class="oc-label">Income Support</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Jobseeker's Allowance"><span class="oc-box"><span class="sq"></span><span class="oc-label">Jobseeker&rsquo;s Allowance</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Housing Benefit"><span class="oc-box"><span class="sq"></span><span class="oc-label">Housing Benefit</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Working Tax Credit"><span class="oc-box"><span class="sq"></span><span class="oc-label">Working Tax Credit</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="Child Tax Credit"><span class="oc-box"><span class="sq"></span><span class="oc-label">Child Tax Credit</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-benefits" value="None of the above" id="ef-benefit-none"><span class="oc-box"><span class="sq"></span><span class="oc-label">None of the above</span></span></label>
+</div>
+<div class="subhead">What is your household income?</div>
+<p class="step-help">Some schemes use a household income threshold instead of benefits.</p>
+<div class="opts" role="radiogroup">
+<label class="oc"><input type="radio" name="ef-income" value="Under £36,000"><span class="oc-box"><span class="dot"></span><span class="oc-label">Under &pound;36,000</span></span></label>
+<label class="oc"><input type="radio" name="ef-income" value="£36,000–£50,000"><span class="oc-box"><span class="dot"></span><span class="oc-label">&pound;36,000&ndash;&pound;50,000</span></span></label>
+<label class="oc"><input type="radio" name="ef-income" value="Over £50,000"><span class="oc-box"><span class="dot"></span><span class="oc-label">Over &pound;50,000</span></span></label>
+<label class="oc"><input type="radio" name="ef-income" value="Prefer not to say"><span class="oc-box"><span class="dot"></span><span class="oc-label">Prefer not to say</span></span></label>
+</div></div>
+
+<div class="wstep" data-step="6">
+<h2>What heats your home now?</h2>
+<p class="step-help">This helps us recommend the best improvements for your home.</p>
+<div class="opts" role="radiogroup">
+<label class="oc"><input type="radio" name="ef-heating" value="Gas boiler"><span class="oc-box"><span class="dot"></span><span class="oc-label">Gas boiler</span></span></label>
+<label class="oc"><input type="radio" name="ef-heating" value="Oil boiler"><span class="oc-box"><span class="dot"></span><span class="oc-label">Oil boiler</span></span></label>
+<label class="oc"><input type="radio" name="ef-heating" value="Electric heating"><span class="oc-box"><span class="dot"></span><span class="oc-label">Electric heating</span></span></label>
+<label class="oc"><input type="radio" name="ef-heating" value="Heat pump"><span class="oc-box"><span class="dot"></span><span class="oc-label">Heat pump</span></span></label>
+<label class="oc"><input type="radio" name="ef-heating" value="No central heating"><span class="oc-box"><span class="dot"></span><span class="oc-label">No central heating</span></span></label>
+<label class="oc"><input type="radio" name="ef-heating" value="Other"><span class="oc-box"><span class="dot"></span><span class="oc-label">Other</span></span></label>
+</div></div>
+<div class="wstep" data-step="7">
+<h2>Which improvements do you want?</h2>
+<p class="step-help">Select all that apply. We&rsquo;ll check what is available for your property.</p>
+<div class="opts">
+<label class="oc"><input type="checkbox" name="ef-improvements" value="Solar panels"><span class="oc-box"><span class="sq"></span><span class="oc-label">Solar panels</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="Heat pump"><span class="oc-box"><span class="sq"></span><span class="oc-label">Heat pump</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="Insulation"><span class="oc-box"><span class="sq"></span><span class="oc-label">Insulation</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="New boiler"><span class="oc-box"><span class="sq"></span><span class="oc-label">New boiler</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="Windows & doors"><span class="oc-box"><span class="sq"></span><span class="oc-label">Windows &amp; doors</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="Battery storage"><span class="oc-box"><span class="sq"></span><span class="oc-label">Battery storage</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="EV charger"><span class="oc-box"><span class="sq"></span><span class="oc-label">EV charger</span></span></label>
+<label class="oc"><input type="checkbox" name="ef-improvements" value="Not sure yet"><span class="oc-box"><span class="sq"></span><span class="oc-label">Not sure yet</span></span></label>
+</div></div>
+
+<div class="wstep" data-step="8">
+<h2>How would you pay for the work?</h2>
+<p class="step-help">An honest answer helps us match you with the right route.</p>
+<div class="opts" role="radiogroup">
+<label class="oc"><input type="radio" name="ef-funding" value="Only if a grant covers it"><span class="oc-box"><span class="dot"></span><span class="oc-label">Only if a grant covers it</span></span></label>
+<label class="oc"><input type="radio" name="ef-funding" value="I can contribute some"><span class="oc-box"><span class="dot"></span><span class="oc-label">I can contribute some</span></span></label>
+<label class="oc"><input type="radio" name="ef-funding" value="I can pay in full"><span class="oc-box"><span class="dot"></span><span class="oc-label">I can pay in full</span></span></label>
+</div></div>
+
+<div class="wstep" data-step="9">
+<h2>Where should we send your results?</h2>
+<p class="step-help">Free and no obligation. We&rsquo;ll check your answers against the current scheme criteria.</p>
+<div class="field"><label class="flabel" for="ef-name">Full name</label><input type="text" id="ef-name" name="name" placeholder="John Smith" autocomplete="name"></div>
+<div class="field"><label class="flabel" for="ef-email">Email address</label><input type="email" id="ef-email" name="email" placeholder="john@example.com" autocomplete="email"></div>
+<div class="field"><label class="flabel" for="ef-phone">Phone number</label><input type="tel" id="ef-phone" name="phone" placeholder="07123 456789" autocomplete="tel"></div>
+<div class="trust-pills"><span>&#10003; Encrypted &amp; secure</span><span>&#10003; No obligation to proceed</span><span>&#10003; Contact about this enquiry only</span></div>
+<p class="call-note">We only call to arrange your free, no-obligation survey &mdash; never marketing spam.</p>
+<label class="consent"><input type="checkbox" id="ef-consent" name="consent" value="Yes"><span>I ask HeatFund to process these details and contact me about my eligibility enquiry.</span></label>
+<div class="privacy-note">HeatFund is an independent eligibility-enquiry service. We are not the government, not a grant administrator and not an installer. No grant is promised or guaranteed before a full eligibility check. We will only use these details to respond to this enquiry.</div>
+</div>
+
+<div class="wiz-nav">
+<button class="btn-back" type="button" id="wizBack" style="display:none">&larr; Back</button>
+<button class="btn-continue" type="button" id="wizNext">Check my area &rarr;</button>
+<button class="btn-continue" type="submit" id="wizSubmit" style="display:none">Get my free results &rarr;</button>
+</div>
+<div class="wiz-error" id="wizError" role="alert"></div>
+</div>
+<div class="success" id="successBox">
+<div class="tick">&#10003;</div>
+<h2>Thanks &mdash; your enquiry has been sent</h2>
+<p>We&rsquo;ll contact you about your eligibility check. No grant is promised before the full check is complete.</p>
+</div>
+</div>
+</form>
+</div>
+<div class="below">
+<h2>What happens after you submit?</h2>
+<div class="after-steps">
+<div class="after-step"><div class="n">1</div><h3>We check your answers</h3><p>We check your answers against official scheme criteria for your postcode and property type.</p></div>
+<div class="after-step"><div class="n">2</div><h3>We contact you about your enquiry</h3><p>We contact you about your enquiry only, using the details you gave, to confirm anything we need and explain what your home may qualify for.</p></div>
+<div class="after-step"><div class="n">3</div><h3>Free survey, no obligation</h3><p>If your home may qualify, the next step is a free, no-obligation survey. No grant is promised before the full eligibility check is complete.</p></div>
+</div>
+<div class="trustline"><span><i>&#10003;</i> Free check</span><span><i>&#10003;</i> No obligation</span><span><i>&#10003;</i> Contact about this enquiry only</span></div>
+<div class="sources"><h2>Sources &amp; Data</h2>
+<p>Figures and criteria are taken from official sources and may change.</p>
+<ul>
+<li><a href="https://www.gov.uk/apply-boiler-upgrade-scheme" target="_blank" rel="noopener">GOV.UK &mdash; Boiler Upgrade Scheme</a></li>
+<li><a href="https://www.ofgem.gov.uk/environmental-and-social-schemes/energy-company-obligation-eco" target="_blank" rel="noopener">Ofgem &mdash; ECO4</a></li>
+<li><a href="https://www.gov.uk/find-energy-certificate" target="_blank" rel="noopener">GOV.UK &mdash; EPC register</a></li>
+<li><a href="https://www.gov.uk/apply-warm-homes-local-grant" target="_blank" rel="noopener">GOV.UK &mdash; Warm Homes: Local Grant</a></li>
+</ul></div>
+<div class="disclaimer-box"><b>About HeatFund:</b> HeatFund is an independent eligibility-enquiry service. We are not the government, not a grant administrator and not an installer. No grant is promised or guaranteed before a full eligibility check.</div>
+</div>
+</main>
+<footer><div class="footer-in">
+<div class="footer-grid">
+<div><div style="font-family:'Fraunces',serif;font-weight:800;font-size:1.6rem;color:#fff">Heat<span style="color:#8fe07a">Fund</span></div>
+<p class="fdesc">HeatFund is an independent eligibility-enquiry service. We are not the government, not a grant administrator and not an installer.</p>
+<p style="font-size:.94rem;color:#fff">Email: info@heatfund.co.uk</p></div>
+<div><h4>Grants</h4><ul><li><a href="/government-grants/">Government Grants</a></li><li><a href="/eco4-scheme/">ECO4 Scheme</a></li><li><a href="/boiler-upgrade-scheme/">Boiler Upgrade Scheme</a></li><li><a href="/warm-homes-plan-2026/">Warm Homes Plan 2026</a></li><li><a href="/vat-relief/">VAT Relief</a></li></ul></div>
+<div><h4>Services</h4><ul><li><a href="/solar-panels/">Solar Panels</a></li><li><a href="/heat-pumps/">Heat Pumps</a></li><li><a href="/free-insulation-grants/">Insulation</a></li><li><a href="/battery-storage/">Battery Storage</a></li><li><a href="/ev-charger-grants/">EV Charger Grants</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="/index.html">Home</a></li><li><a href="/index.html#about">About Us</a></li><li><a href="/index.html#faq">FAQ</a></li><li><a href="/eligibility.html">Check Eligibility</a></li></ul></div>
+</div>
+<p class="bottom-line">HeatFund is an independent eligibility-enquiry service. We are not affiliated with HM Government or any grant administrator, and we are not an installer. No grant is promised before a full eligibility check.</p>
+<div class="copy"><span>&copy; 2026 HeatFund</span><span>Heat pumps &middot; Solar &middot; Insulation</span></div>
+</div></footer>
+<style>.oc input:checked+.oc-box .sq::after{content:"\2713";color:#fff;font-weight:800;font-size:13px}</style>
+<script>
+(function(){
+var TOTAL=9,current=1,ACCESS_KEY="57acab6c-a9c2-443a-b5f3-54dc47ed8d3c";
+var card=document.getElementById('formCard'),steps=document.querySelectorAll('.wstep');
+var countEl=document.getElementById('wizCount'),barEl=document.getElementById('wizBar'),errEl=document.getElementById('wizError');
+var backBtn=document.getElementById('wizBack'),nextBtn=document.getElementById('wizNext'),submitBtn=document.getElementById('wizSubmit');
+var pc=document.getElementById('ef-postcode'),epcPc=document.getElementById('ef-epc-postcode');
+var carried=false;
+var epcConfirmed=false,epcConfirmedRating='',epcConfirmedDate='',epcPendingRating='',epcPendingDate='',epcNeedsConfirm=false;
+var EPC_BADGE_COLORS={A:'#008542',B:'#4CAF50',C:'#A6CE39',D:'#FFD200',E:'#F7941E',F:'#F26522',G:'#ED1C24'};
+function gateContinue(on){nextBtn.disabled=!!on;nextBtn.classList.toggle('is-gated',!!on);}
+function scrollCard(){requestAnimationFrame(function(){card.scrollIntoView({behavior:'smooth',block:'start'});});}
+function showErr(m){errEl.textContent=m||'';errEl.style.display=m?'block':'none';}
+function rv(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
+function cv(n){var v=[];document.querySelectorAll('input[name="'+n+'"]:checked').forEach(function(e){v.push(e.value)});return v;}
+function validPc(v){return /^[A-Za-z]{1,2}\d[A-Za-z\d]?\s*\d[A-Za-z]{2}$/.test(v.trim());}
+function mark(id,bad){var e=document.getElementById(id);if(e)e.classList.toggle('invalid',!!bad);}
+function validate(n){
+ if(n===1){var bad=!validPc(pc.value);mark('ef-postcode',bad);return bad?'Please enter a valid postcode (e.g. SW1A 1AA).':'';}
+ if(n===2)return rv('ef-tenure')?'':'Please choose whether you own or rent your home.';
+ if(n===3)return rv('ef-property')?'':'Please choose your home type.';
+ if(n===4){var bad=!document.getElementById('ef-house').value.trim();mark('ef-house',bad);return bad?'Please enter your house number or name first.':'';}
+ if(n===5){if(!cv('ef-benefits').length)return 'Please select at least one benefit option — choose "None of the above" if none apply.';if(!rv('ef-income'))return 'Please choose your household income.';return '';}
+ if(n===6)return rv('ef-heating')?'':'Please choose your current heating.';
+ if(n===7)return cv('ef-improvements').length?'':'Please select at least one improvement.';
+ if(n===8)return rv('ef-funding')?'':'Please choose how you would pay.';
+ if(n===9){
+   var nm=document.getElementById('ef-name'),em=document.getElementById('ef-email'),ph=document.getElementById('ef-phone');
+   mark('ef-name',!nm.value.trim());if(!nm.value.trim())return 'Please enter your full name.';
+   var ebad=!em.value.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim());mark('ef-email',ebad);if(ebad)return 'Please enter a valid email address.';
+   mark('ef-phone',!ph.value.trim());if(!ph.value.trim())return 'Please enter your phone number.';
+   if(!document.getElementById('ef-consent').checked)return 'Please tick the consent box so we can contact you about your enquiry.';
+   return '';}
+ return '';}
+function render(){
+ steps.forEach(function(s){s.classList.toggle('active',+s.dataset.step===current);});
+ countEl.textContent='Step '+current+' of '+TOTAL;barEl.style.width=Math.round(current/TOTAL*100)+'%';
+ backBtn.style.display=current===1?'none':'';
+ if(current===1){nextBtn.textContent='Check my area \u2192';nextBtn.style.display='';submitBtn.style.display='none';}
+ else if(current===9){nextBtn.style.display='none';submitBtn.style.display='';}
+ else{nextBtn.textContent='Continue \u2192';nextBtn.style.display='';submitBtn.style.display='none';}
+ showErr('');
+ if(current===4){epcPc.value=pc.value.trim().toUpperCase();syncChip();}
+ gateContinue(current===4&&epcNeedsConfirm);
+}
+function syncChip(){var chip=document.getElementById('epcChip');var has=carried&&!!pc.value.trim();chip.style.display=has?'inline-block':'none';if(has)chip.textContent='\u2713 Postcode carried over from the homepage: '+pc.value.trim().toUpperCase();}
+nextBtn.addEventListener('click',function(){var e=validate(current);if(e){showErr(e);scrollCard();return;}if(current<TOTAL){current++;render();scrollCard();}});
+backBtn.addEventListener('click',function(){if(current>1){current--;render();scrollCard();}});
+function escapeHtml(v){return String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function hideEpcBoxes(){document.getElementById('epcConfirm').style.display='none';document.getElementById('epcAttrib').style.display='none';document.getElementById('epcNone').style.display='none';document.getElementById('epcChecking').style.display='none';}
+function resetEpcConfirmation(){epcConfirmed=false;epcConfirmedRating='';epcConfirmedDate='';epcPendingRating='';epcPendingDate='';document.getElementById('epcConfirm').style.display='none';document.getElementById('epcAttrib').style.display='none';}
+function showEpcRateQ(){document.getElementById('epcRateQ').style.display='';}
+function hideEpcRateQ(){document.getElementById('epcRateQ').style.display='none';}
+document.getElementById('epcFindBtn').addEventListener('click',function(){
+ var h=document.getElementById('ef-house');if(!h.value.trim()){mark('ef-house',true);showErr('Please enter your house number or name first, then tap Find my home.');return;}
+ mark('ef-house',false);showErr('');
+ resetEpcConfirmation();hideEpcBoxes();hideEpcRateQ();
+ document.getElementById('epcChecking').style.display='block';
+ epcNeedsConfirm=true;gateContinue(true); /* gated until the result is known */
+ var pcv=pc.value.trim().toUpperCase();
+ fetch('/api/epc?postcode='+encodeURIComponent(pcv)+'&house='+encodeURIComponent(h.value.trim()))
+  .then(function(r){return r.json();})
+  .then(function(d){
+   document.getElementById('epcChecking').style.display='none';
+   if(!d||d.available!==true){showEpcRateQ();epcNeedsConfirm=false;gateContinue(false);return;} /* lookup unavailable: no result box, rating question only */
+   var certs=(d.certificates||[]);
+   if(certs.length){
+     var c=certs[0]; /* most recent certificate only */
+     var band=String(c['current-energy-rating']||'').toUpperCase();
+     var badge=document.getElementById('epcBadge');
+     badge.textContent=band;badge.style.background=EPC_BADGE_COLORS[band]||'#6b7280';
+     document.getElementById('epcConfirmAddr').textContent=(c.address||'')+(c.postcode?(' '+c.postcode):'');
+     document.getElementById('epcConfirmRated').textContent='Rated '+band;
+     document.getElementById('epcConfirm').style.display='block';
+     document.getElementById('epcAttrib').style.display='block';
+     hideEpcRateQ();
+     epcPendingRating=band;epcPendingDate=c['lodgement-date']||'';
+     epcNeedsConfirm=true;gateContinue(true); /* stays gated until "Yes, that's my home" */
+   }else{
+     var n=document.getElementById('epcNone');
+     n.textContent='There are no EPC certificates for '+pcv+' on the register. That\u2019s fine, you can carry on.';
+     n.style.display='block';
+     showEpcRateQ();epcNeedsConfirm=false;gateContinue(false);
+   }
+  })
+  .catch(function(){document.getElementById('epcChecking').style.display='none';showEpcRateQ();epcNeedsConfirm=false;gateContinue(false);});
+});
+document.getElementById('epcYesBtn').addEventListener('click',function(){
+ epcConfirmed=true;epcConfirmedRating=epcPendingRating;epcConfirmedDate=epcPendingDate;
+ epcNeedsConfirm=false;gateContinue(false);showErr('');
+});
+document.getElementById('epcNoBtn').addEventListener('click',function(){
+ resetEpcConfirmation();showEpcRateQ();epcNeedsConfirm=false;gateContinue(false);
+ var h=document.getElementById('ef-house');h.focus();h.select();
+});
+document.getElementById('ef-house').addEventListener('input',function(){
+ var cardShown=document.getElementById('epcConfirm').style.display==='block';
+ if(epcConfirmed||cardShown){
+   resetEpcConfirmation();hideEpcRateQ();
+   epcNeedsConfirm=true;gateContinue(true); /* confirmation reset: fresh lookup + Yes needed */
+ }
+});
+var none=document.getElementById('ef-benefit-none'),boxes=document.querySelectorAll('input[name="ef-benefits"]');
+boxes.forEach(function(b){b.addEventListener('change',function(){if(b===none&&b.checked){boxes.forEach(function(x){if(x!==none)x.checked=false;});}else if(b.checked){none.checked=false;}});});
+try{var sp=(new URLSearchParams(location.search).get('postcode')||'').trim();if(sp){pc.value=sp;epcPc.value=sp.toUpperCase();carried=true;var c=document.getElementById('pcReceived');c.textContent='\u2713 Postcode carried over from the homepage: '+sp.toUpperCase();c.style.display='block';syncChip();}}catch(e){}
+pc.addEventListener('input',function(){epcPc.value=pc.value;carried=false;syncChip();});
+var icon=document.querySelector('link[rel="icon"]'),t=new Image();t.onerror=function(){if(icon)icon.href='/assets/favicon.png';};t.src='/favicon.png';
+render();
+document.getElementById('eligForm').addEventListener('submit',function(ev){
+ ev.preventDefault();var e=validate(9);if(e){showErr(e);scrollCard();return;}
+ submitBtn.disabled=true;submitBtn.textContent='Sending\u2026';showErr('');
+ var fd=new FormData();fd.append('access_key',ACCESS_KEY);fd.append('subject','New HeatFund eligibility enquiry');fd.append('from_name','HeatFund website');
+ fd.append('Postcode',pc.value.trim());fd.append('Own or rent',rv('ef-tenure'));fd.append('Home type',rv('ef-property'));
+ fd.append('House number or name',document.getElementById('ef-house').value.trim());fd.append('EPC rating',epcConfirmed?epcConfirmedRating:(rv('ef-epc-rating')||"Don't know"));if(epcConfirmed&&epcConfirmedDate)fd.append('EPC lodgement date',epcConfirmedDate);fd.append('Benefits',cv('ef-benefits').join(', '));
+ fd.append('Household income',rv('ef-income'));fd.append('Current heating',rv('ef-heating'));fd.append('Improvements wanted',cv('ef-improvements').join(', '));
+ fd.append('How would pay',rv('ef-funding'));fd.append('Full name',document.getElementById('ef-name').value.trim());
+ fd.append('Email',document.getElementById('ef-email').value.trim());fd.append('Phone',document.getElementById('ef-phone').value.trim());
+ fd.append('Consent','I ask HeatFund to process these details and contact me about my eligibility enquiry.');
+ fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).then(function(r){return r.json();}).then(function(d){
+  if(!d.success)throw new Error('failed');
+  document.getElementById('wizardBody').style.display='none';document.getElementById('successBox').style.display='block';scrollCard();
+ }).catch(function(){submitBtn.disabled=false;submitBtn.textContent='Get my free results \u2192';showErr('Sorry, sending failed. Please check your connection and try again — your answers are still here.');scrollCard();});
+});
+})();
+</script>
+</body>
+</html>
