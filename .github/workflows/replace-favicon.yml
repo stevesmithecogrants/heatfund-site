@@ -1,0 +1,22 @@
+name: Replace favicon with new flame favicon
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace favicon.png and assets/favicon.png
+        run: |
+          cp image-264.png favicon.png
+          cp image-264.png assets/favicon.png
+          rm image-264.png
+      - name: Commit and push if changed
+        run: |
+          git config user.name "stevesmithecogrants"
+          git config user.email "stevesmithecogrants@gmail.com"
+          git add favicon.png assets/favicon.png image-264.png
+          git diff --cached --quiet || git commit -m "Replace favicon.png and assets/favicon.png with new clean orange flame favicon"
+          git push
