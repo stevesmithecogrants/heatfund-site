@@ -6,6 +6,7 @@
 <title>Heat Pumps — HeatFund</title>
 <meta name="description" content="Heat pump grants UK 2026: up to £7,500 off through the Boiler Upgrade Scheme, 0% VAT, costs, running costs and how to check your eligibility.">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon.ico?v=2">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--cream:#F5F3EE;--navy:#00062F;--green:#268F00;--card:#fff;--muted:#4a4f5e;--line:#e5e0d5}
@@ -74,6 +75,14 @@ footer li{margin:0}
 @media(max-width:1280px){.navlinks{gap:2px}.btn-check{padding:10px 20px}}
 @media(max-width:640px){.topbar{top:8px;padding:0 10px}.nav{padding:4px 4px 4px 14px}.logo{font-size:1.55rem}.logo img{height:23px}}
 @media(max-width:900px){.navlinks{display:none}.navcta .btn{display:none}.footer-grid{grid-template-columns:1fr}}
+.burger{display:none;background:var(--navy);color:#fff;border:none;width:36px;height:36px;border-radius:50%;font-size:16px;cursor:pointer}
+.mobilemenu{display:none;max-width:1720px;margin:10px auto 0;background:var(--paper,#fffef9);border:1px solid var(--line,#e7e1d3);border-radius:18px;padding:16px;box-shadow:0 18px 50px rgba(0,6,47,.14);max-height:calc(100vh - 96px);overflow:auto}
+.mobilemenu.open{display:block}
+.mobilemenu a{display:block;padding:10px 6px;color:var(--navy);font-weight:600;border-bottom:1px solid var(--line,#e7e1d3)}
+.mobilemenu a:last-child{border:none}
+.mobilemenu .mm-label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:14px 6px 2px}
+.mobilemenu a.mm-sub{padding-left:18px;font-weight:700;color:var(--ink)}
+@media(max-width:900px){.burger{display:grid;place-items:center}}
 </style>
 </head>
 <body>
@@ -406,6 +415,32 @@ footer a{color:var(--navy)}
   document.addEventListener('click',function(){
     document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mm=document.getElementById('mobilemenu');
+  if(burger && mm){
+    burger.addEventListener('click',function(){
+      var open=mm.style.display==='block';
+      mm.style.display=open?'none':'block';
+      burger.setAttribute('aria-expanded', String(!open));
+      burger.textContent=open?'\u2630':'\u2715';
+    });
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.style.display='none';burger.textContent='\u2630';burger.setAttribute('aria-expanded','false');});});
+  }
+  var dropdowns=document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd){
+    var b=dd.querySelector('.nav-drop-toggle');
+    if(b){ b.addEventListener('click',function(e){ e.stopPropagation();
+      var was=dd.classList.contains('open');
+      dropdowns.forEach(function(d){ d.classList.remove('open'); var bb=d.querySelector('.nav-drop-toggle'); if(bb) bb.setAttribute('aria-expanded','false'); });
+      if(!was){ dd.classList.add('open'); b.setAttribute('aria-expanded','true'); }
+    }); }
+  });
+  document.addEventListener('click',function(){ dropdowns.forEach(function(d){ d.classList.remove('open'); }); });
 })();
 </script>
 

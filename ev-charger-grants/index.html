@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light">
 <meta name="description" content="EV charger grants UK 2026: up to £500 off home charging for renters, flat owners and on-street households. Grant amounts, costs, eligibility and how to claim before 31 March 2027.">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon.ico?v=2">
 <title>EV Charger Grants UK 2026: Up to £500 Off Home Charging | HeatFund</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +65,24 @@ footer a{color:#fff}footer ul{list-style:none;padding:0;margin:0}footer li a{dis
 .bottom-line{font-size:.88rem;color:#9AA3BC;line-height:1.6;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);text-align:center;max-width:900px;margin:0 auto}
 .copy{font-size:.88rem;color:#9AA3BC;padding-top:12px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.burger{display:none;background:var(--navy);color:#fff;border:none;width:36px;height:36px;border-radius:50%;font-size:16px;cursor:pointer}
+.mobilemenu{display:none;max-width:1720px;margin:10px auto 0;background:var(--paper,#fffef9);border:1px solid var(--line,#e7e1d3);border-radius:18px;padding:16px;box-shadow:0 18px 50px rgba(0,6,47,.14);max-height:calc(100vh - 96px);overflow:auto}
+.mobilemenu.open{display:block}
+.mobilemenu a{display:block;padding:10px 6px;color:var(--navy);font-weight:600;border-bottom:1px solid var(--line,#e7e1d3)}
+.mobilemenu a:last-child{border:none}
+.mobilemenu .mm-label{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:14px 6px 2px}
+.mobilemenu a.mm-sub{padding-left:18px;font-weight:700;color:var(--ink)}
+@media(max-width:900px){.burger{display:grid;place-items:center}}
+.nav-dropdown{position:relative}
+.nav-drop-toggle{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1.5px solid transparent;border-radius:999px;padding:8px 14px;color:#626B80;font-family:inherit;font-weight:500;font-size:.88rem;cursor:pointer;white-space:nowrap;transition:border-color .15s,background .15s}
+.nav-drop-toggle:hover{color:var(--navy)}
+.nav-drop-toggle .chev{width:14px;height:14px;flex:none;transition:transform .18s}
+.nav-dropdown.open .nav-drop-toggle,.nav-dropdown:hover .nav-drop-toggle,.nav-dropdown:focus-within .nav-drop-toggle{border-color:var(--navy);color:var(--navy);background:#fff}
+.nav-dropdown.open .nav-drop-toggle .chev{transform:rotate(180deg)}
+.dropdown-panel{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(6px);width:300px;max-width:86vw;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 22px 50px rgba(0,6,47,.16);padding:14px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s,transform .16s,visibility .16s;z-index:60}
+.nav-dropdown.open .dropdown-panel,.nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.dropdown-panel a{display:block;padding:13px 14px;color:var(--ink);font-weight:700;font-size:1.02rem;line-height:1.25;border-radius:12px}
+.dropdown-panel a:hover{background:var(--green-soft);color:var(--navy)}
 </style>
 </head>
 <body>
@@ -432,6 +451,32 @@ r.style.display='block';r.innerHTML='<b>Good news — you look like the househol
   document.addEventListener('click',function(){
     document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mm=document.getElementById('mobilemenu');
+  if(burger && mm){
+    burger.addEventListener('click',function(){
+      var open=mm.style.display==='block';
+      mm.style.display=open?'none':'block';
+      burger.setAttribute('aria-expanded', String(!open));
+      burger.textContent=open?'\u2630':'\u2715';
+    });
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.style.display='none';burger.textContent='\u2630';burger.setAttribute('aria-expanded','false');});});
+  }
+  var dropdowns=document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd){
+    var b=dd.querySelector('.nav-drop-toggle');
+    if(b){ b.addEventListener('click',function(e){ e.stopPropagation();
+      var was=dd.classList.contains('open');
+      dropdowns.forEach(function(d){ d.classList.remove('open'); var bb=d.querySelector('.nav-drop-toggle'); if(bb) bb.setAttribute('aria-expanded','false'); });
+      if(!was){ dd.classList.add('open'); b.setAttribute('aria-expanded','true'); }
+    }); }
+  });
+  document.addEventListener('click',function(){ dropdowns.forEach(function(d){ d.classList.remove('open'); }); });
 })();
 </script>
 
