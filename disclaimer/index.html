@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light">
 <meta name="description" content="Disclaimer — HeatFund">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="shortcut icon" href="/favicon.ico?v=2">
 <title>Disclaimer | HeatFund</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -307,6 +308,32 @@ footer li a{display:block;padding:8px 0;font-size:.96rem;line-height:1.45}
   function choose(v){ try{ localStorage.setItem('heatfund-cookie-choice',v); }catch(e){} note.classList.remove('show'); }
   document.getElementById('cnAccept').addEventListener('click',function(){ choose('accepted'); });
   document.getElementById('cnDecline').addEventListener('click',function(){ choose('declined'); });
+})();
+</script>
+
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mm=document.getElementById('mobilemenu');
+  if(burger && mm){
+    burger.addEventListener('click',function(){
+      var open=mm.style.display==='block';
+      mm.style.display=open?'none':'block';
+      burger.setAttribute('aria-expanded', String(!open));
+      burger.textContent=open?'\u2630':'\u2715';
+    });
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mm.style.display='none';burger.textContent='\u2630';burger.setAttribute('aria-expanded','false');});});
+  }
+  var dropdowns=document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dd){
+    var b=dd.querySelector('.nav-drop-toggle');
+    if(b){ b.addEventListener('click',function(e){ e.stopPropagation();
+      var was=dd.classList.contains('open');
+      dropdowns.forEach(function(d){ d.classList.remove('open'); var bb=d.querySelector('.nav-drop-toggle'); if(bb) bb.setAttribute('aria-expanded','false'); });
+      if(!was){ dd.classList.add('open'); b.setAttribute('aria-expanded','true'); }
+    }); }
+  });
+  document.addEventListener('click',function(){ dropdowns.forEach(function(d){ d.classList.remove('open'); }); });
 })();
 </script>
 
